@@ -18,6 +18,7 @@ export default function Seats({ setOrder }) {
     getSeats(showtimeId).then((res) => {
       setShowtime(res.data);
     });
+    //eslint-disable-next-line
   }, []);
 
   function selectSeats(seat) {

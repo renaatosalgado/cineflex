@@ -12,6 +12,7 @@ export default function Showtimes() {
     getShowtimes(movieId).then((res) => {
       setShowtime(res.data);
     });
+    //eslint-disable-next-line
   }, []);
 
   return (

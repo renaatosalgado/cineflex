@@ -7,6 +7,7 @@ export default function Movies() {
 
   useEffect(() => {
     getMovies().then((res) => setMovies(res.data));
+    //eslint-disable-next-line
   }, []);
 
   return (
