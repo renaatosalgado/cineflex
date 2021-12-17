@@ -12,4 +12,9 @@ function getShowtimes(movieId) {
   return promise;
 }
 
-export { getMovies, getShowtimes };
+function getSeats(showtimeId) {
+  const promise = axios.get(`${BASE_URL}/showtimes/${showtimeId}/seats`);
+  return promise;
+}
+
+export { getMovies, getShowtimes, getSeats };
