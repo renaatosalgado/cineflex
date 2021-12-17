@@ -8,8 +8,8 @@ export default function Day({ day }) {
       </div>
 
       <div className="showtime-list">
-        {day.showtimes.map((showtime) => (
-          <Showtime showtime={showtime} />
+        {day.showtimes.map((showtime, index) => (
+          <Showtime showtime={showtime} key={index}/>
         ))}
       </div>
     </div>

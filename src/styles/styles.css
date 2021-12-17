@@ -18,6 +18,7 @@ body {
   color: #e8833a;
   font-size: 34px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .view {
@@ -232,5 +233,30 @@ body {
   background-color: #e8833a;
   border: none;
   border-radius: 3px;
-  margin: 0 auto;
+  margin: 57px auto 57px auto;
+  cursor: pointer;
+}
+
+.page-review .page-title{
+  font-weight: bold;
+  color: #247a6b;
+  text-align: center;
+}
+
+.info-group {
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+}
+
+.info-group:not(:last-child){
+  margin-bottom: 47px;
+}
+
+.info-group .title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 18px;
+  margin-top: 10px;
 }

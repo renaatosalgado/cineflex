@@ -1,7 +1,7 @@
 import Footer from "../Footer";
 import Subtitle from "./Subtitle";
 
-import { getSeats } from "../../service/API";
+import { getSeats, postBooking } from "../../service/API";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -36,6 +36,25 @@ export default function Seats({ setOrder }) {
     }
   }
 
+  function makeBooking() {
+    const body = {
+      ids: selectedSeats.map((seat) => seat.id),
+      name,
+      cpf,
+    };
+
+    if (name && cpf && selectedSeats.length > 0) {
+      postBooking(body);
+      navigate("/sucesso");
+    }
+    setOrder({
+      showtime,
+      selectedSeats,
+      name,
+      cpf,
+    });
+  }
+
   return (
     <div className="page-seats">
       <div className="page-title">Selecione o(s) assento (s)</div>
@@ -49,6 +68,7 @@ export default function Seats({ setOrder }) {
               selectedSeats.find((seat) => seat.id === s.id) ? "selected" : ""
             }`}
                 onClick={() => selectSeats(s)}
+                key={s.name}
               >
                 {s.name}
               </div>
@@ -80,7 +100,9 @@ export default function Seats({ setOrder }) {
         </div>
       </div>
 
-      <button className="book-seats">Reservar assento(s)</button>
+      <button className="book-seats" onClick={makeBooking}>
+        Reservar assento(s)
+      </button>
 
       {showtime ? (
         <Footer
