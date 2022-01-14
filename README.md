@@ -2,7 +2,8 @@
 
 A simple application to buy cinema tickets! Choose you movie, select your seats, confirm you order and that's it.
 
-<img src="/assets/my-wallet-usage.gif" />
+<img src="/public/assets/Cineflex.gif" />
+
 
 Try it out now at https://cineflex-roan.vercel.app/
 
